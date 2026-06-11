@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang=zh-CN>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta property="og:description" content="随便写写">
+    <meta property="og:type" content="website">
+    <meta name="description" content="随便写写">
+    <meta name="keyword"  content="">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>
+        
+        XCTF GFSJ1036 Write UP - undefined
+        
+    </title>
+
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/css/aircloud.css">
+
+    
+<link rel="stylesheet" href="/css/gitment.css">
+
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_28hi1hpxx24.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script>
+
+    
+
+
+
+
+
+
+
+
+
+<meta name="generator" content="Hexo 8.1.2"></head>
+
+<body>
+
+<div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> h0w1e&#39;s blogs </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        
+<div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar radius">
+            <img src="/" />
+        </div>
+        <div class="name">
+            <i>h0w1e</i>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li >
+                <a href="/">
+                    <i class="iconfont icon-shouye1"></i>
+                    <span>主页</span>
+                </a>
+            </li>
+            <li >
+                <a href="/tags">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>标签</span>
+                </a>
+            </li>
+            <li >
+                <a href="/archives">
+                    <i class="iconfont icon-guidang2"></i>
+                    <span>存档</span>
+                </a>
+            </li>
+            <li >
+                <a href="/collect/">
+                    <i class="iconfont icon-shoucang1"></i>
+                    <span>收藏</span>
+                </a>
+            </li>
+            <li >
+                <a href="/about/">
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>关于</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <i class="iconfont icon-sousuo1"></i>
+                    <span>搜索</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    
+        <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#XCTF-GFSJ1036-Write-UP"><span class="toc-text">XCTF GFSJ1036 Write UP</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%96%87%E4%BB%B6%E4%BF%A1%E6%81%AF"><span class="toc-text">文件信息</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E4%BC%AA%E4%BB%A3%E7%A0%81%E5%88%86%E6%9E%90"><span class="toc-text">伪代码分析</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E8%A7%A3%E5%AF%86%E8%84%9A%E6%9C%AC"><span class="toc-text">解密脚本</span></a></li></ol></li></ol>
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-bg" id="search-bg"></div>
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input"/>
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+
+        <div class="index-about-mobile">
+            <i> h0w1e&#39;s blogs </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        
+
+
+<div class="post-container">
+    <div class="post-title">
+        XCTF GFSJ1036 Write UP
+    </div>
+
+    <div class="post-meta">
+        <span class="attr">发布于：<span>2026-06-10 17:10:13</span></span>
+        
+        <span class="attr">标签：/
+        
+        <a class="tag" href="/tags/#XCTF" title="XCTF">XCTF</a>
+        <span>/</span>
+        
+        
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+</span>
+</span>
+    </div>
+    <div class="post-content no-indent">
+        <h3 id="XCTF-GFSJ1036-Write-UP"><a href="#XCTF-GFSJ1036-Write-UP" class="headerlink" title="XCTF GFSJ1036 Write UP"></a>XCTF GFSJ1036 Write UP</h3><h5 id="文件信息"><a href="#文件信息" class="headerlink" title="文件信息"></a>文件信息</h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">PE64</span><br><span class="line">    Operation system: Windows (Vista) [AMD64, 64-bit, Console]</span><br><span class="line">    Linker: Microsoft Linker (14.26.28806)</span><br><span class="line">    Compiler: Microsoft Visual C/C++ (19.26.28806) [C++]</span><br><span class="line">    Language: C++</span><br><span class="line">    Tool: Microsoft Visual Studio (2019, 16.6)</span><br><span class="line">    Debug data: Records [codeview, vc_feature, pogo]</span><br><span class="line">    (Heur) Debug data: Contains [Absolute PDB path]</span><br></pre></td></tr></table></figure>
+
+<h5 id="伪代码分析"><a href="#伪代码分析" class="headerlink" title="伪代码分析"></a>伪代码分析</h5><p>逻辑比较简单，RC4 + XOR</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> __fastcall <span class="title function_">main</span><span class="params">(<span class="type">int</span> argc, <span class="type">const</span> <span class="type">char</span> **argv, <span class="type">const</span> <span class="type">char</span> **envp)</span></span><br><span class="line">&#123;</span><br><span class="line">  <span class="type">unsigned</span> <span class="type">int</span> v3; <span class="comment">// eax</span></span><br><span class="line">  <span class="type">unsigned</span> <span class="type">int</span> v4; <span class="comment">// eax</span></span><br><span class="line">  <span class="type">void</span> *v5; <span class="comment">// rax</span></span><br><span class="line">  <span class="type">void</span> *v7; <span class="comment">// rax</span></span><br><span class="line">  <span class="type">int</span> i; <span class="comment">// [rsp+24h] [rbp-D4h]</span></span><br><span class="line">  <span class="type">void</span> *v9; <span class="comment">// [rsp+28h] [rbp-D0h]</span></span><br><span class="line">  <span class="type">char</span> v10[<span class="number">32</span>]; <span class="comment">// [rsp+30h] [rbp-C8h] BYREF</span></span><br><span class="line">  <span class="type">char</span> Str[<span class="number">128</span>]; <span class="comment">// [rsp+50h] [rbp-A8h] BYREF</span></span><br><span class="line"></span><br><span class="line">  <span class="built_in">strcpy</span>(Str, <span class="string">&quot;12345678abcdefghijklmnopqrspxyz&quot;</span>);</span><br><span class="line">  <span class="built_in">memset</span>(&amp;Str[<span class="number">32</span>], <span class="number">0</span>, <span class="number">0x60u</span>);</span><br><span class="line">  <span class="built_in">memset</span>(v10, <span class="number">0</span>, <span class="number">0x17u</span>);</span><br><span class="line">  sub_1400054D0(<span class="string">&quot;%s&quot;</span>, v10);</span><br><span class="line">  v9 = <span class="built_in">malloc</span>(<span class="number">0x408u</span>);</span><br><span class="line">  v3 = <span class="built_in">strlen</span>(Str);</span><br><span class="line">  sub_140001120(v9, Str, v3);</span><br><span class="line">  v4 = <span class="built_in">strlen</span>(v10);</span><br><span class="line">  sub_140001240(v9, v10, v4);</span><br><span class="line">  <span class="keyword">for</span> ( i = <span class="number">0</span>; i &lt; <span class="number">22</span>; ++i )</span><br><span class="line">  &#123;</span><br><span class="line">    <span class="keyword">if</span> ( ((<span class="type">unsigned</span> __int8)v10[i] ^ <span class="number">0x22</span>) != byte_14013B000[i] )</span><br><span class="line">    &#123;</span><br><span class="line">      v5 = (<span class="type">void</span> *)sub_1400015A0(&amp;off_14013B020, <span class="string">&quot;error&quot;</span>);</span><br><span class="line">      _CallMemberFunction0(v5, sub_140001F10);</span><br><span class="line">      <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  v7 = (<span class="type">void</span> *)sub_1400015A0(&amp;off_14013B020, <span class="string">&quot;nice job&quot;</span>);</span><br><span class="line">  _CallMemberFunction0(v7, sub_140001F10);</span><br><span class="line">  <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><code>sub_140001120</code>RC4密钥调度算法（KSA）</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">__int64 __fastcall <span class="title function_">sub_140001120</span><span class="params">(_DWORD *a1, __int64 a2, <span class="type">int</span> a3)</span></span><br><span class="line">&#123;</span><br><span class="line">  __int64 result; <span class="comment">// rax</span></span><br><span class="line">  <span class="type">int</span> i; <span class="comment">// [rsp+0h] [rbp-28h]</span></span><br><span class="line">  <span class="type">int</span> j; <span class="comment">// [rsp+0h] [rbp-28h]</span></span><br><span class="line">  <span class="type">int</span> v6; <span class="comment">// [rsp+4h] [rbp-24h]</span></span><br><span class="line">  <span class="type">int</span> v7; <span class="comment">// [rsp+8h] [rbp-20h]</span></span><br><span class="line">  <span class="type">int</span> v8; <span class="comment">// [rsp+Ch] [rbp-1Ch]</span></span><br><span class="line">  _DWORD *v9; <span class="comment">// [rsp+10h] [rbp-18h]</span></span><br><span class="line"></span><br><span class="line">  *a1 = <span class="number">0</span>;</span><br><span class="line">  a1[<span class="number">1</span>] = <span class="number">0</span>;</span><br><span class="line">  v9 = a1 + <span class="number">2</span>;</span><br><span class="line">  <span class="keyword">for</span> ( i = <span class="number">0</span>; i &lt; <span class="number">256</span>; ++i )</span><br><span class="line">    v9[i] = i;</span><br><span class="line">  v6 = <span class="number">0</span>;</span><br><span class="line">  result = <span class="number">0</span>;</span><br><span class="line">  LOBYTE(v7) = <span class="number">0</span>;</span><br><span class="line">  <span class="keyword">for</span> ( j = <span class="number">0</span>; j &lt; <span class="number">256</span>; ++j )</span><br><span class="line">  &#123;</span><br><span class="line">    v8 = v9[j];</span><br><span class="line">    v7 = (<span class="type">unsigned</span> __int8)(*(_BYTE *)(a2 + v6) + v8 + v7);</span><br><span class="line">    v9[j] = v9[v7];</span><br><span class="line">    v9[v7] = v8;</span><br><span class="line">    <span class="keyword">if</span> ( ++v6 &gt;= a3 )</span><br><span class="line">      v6 = <span class="number">0</span>;</span><br><span class="line">    result = (<span class="type">unsigned</span> <span class="type">int</span>)(j + <span class="number">1</span>);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> result;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><code>sub_140001240</code>RC4伪随机生成算法（PRGA）</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> *__fastcall <span class="title function_">sub_140001240</span><span class="params">(<span class="type">int</span> *a1, __int64 a2, <span class="type">int</span> a3)</span></span><br><span class="line">&#123;</span><br><span class="line">  <span class="type">int</span> i; <span class="comment">// [rsp+0h] [rbp-28h]</span></span><br><span class="line">  <span class="type">int</span> v5; <span class="comment">// [rsp+4h] [rbp-24h]</span></span><br><span class="line">  <span class="type">int</span> v6; <span class="comment">// [rsp+8h] [rbp-20h]</span></span><br><span class="line">  <span class="type">int</span> v7; <span class="comment">// [rsp+Ch] [rbp-1Ch]</span></span><br><span class="line">  <span class="type">int</span> v8; <span class="comment">// [rsp+10h] [rbp-18h]</span></span><br><span class="line">  _DWORD *v9; <span class="comment">// [rsp+18h] [rbp-10h]</span></span><br><span class="line"></span><br><span class="line">  v5 = *a1;</span><br><span class="line">  v6 = a1[<span class="number">1</span>];</span><br><span class="line">  v9 = a1 + <span class="number">2</span>;</span><br><span class="line">  <span class="keyword">for</span> ( i = <span class="number">0</span>; i &lt; a3; ++i )</span><br><span class="line">  &#123;</span><br><span class="line">    v5 = (<span class="type">unsigned</span> __int8)(v5 + <span class="number">1</span>);</span><br><span class="line">    v7 = v9[v5];</span><br><span class="line">    v6 = (<span class="type">unsigned</span> __int8)(v7 + v6);</span><br><span class="line">    v8 = v9[v6];</span><br><span class="line">    v9[v5] = v8;</span><br><span class="line">    v9[v6] = v7;</span><br><span class="line">    *(_BYTE *)(a2 + i) ^= LOBYTE(v9[(<span class="type">unsigned</span> __int8)(v8 + v7)]);</span><br><span class="line">  &#125;</span><br><span class="line">  *a1 = v5;</span><br><span class="line">  a1[<span class="number">1</span>] = v6;</span><br><span class="line">  <span class="keyword">return</span> a1;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h5 id="解密脚本"><a href="#解密脚本" class="headerlink" title="解密脚本"></a>解密脚本</h5><p>没想到这种题目直接被ai秒了，分析可能很快，但是写脚本需要花时间，脚本ai直接几秒解决，<del>可以开始考虑下岗再就业了，去学炒饭了，不知道ctfer炒饭有没有搞头</del></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># RC4 implementation</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">rc4_ksa</span>(<span class="params">key</span>):</span><br><span class="line">    S = <span class="built_in">list</span>(<span class="built_in">range</span>(<span class="number">256</span>))</span><br><span class="line">    j = <span class="number">0</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">256</span>):</span><br><span class="line">        j = (j + S[i] + key[i % <span class="built_in">len</span>(key)]) % <span class="number">256</span></span><br><span class="line">        S[i], S[j] = S[j], S[i]</span><br><span class="line">    <span class="keyword">return</span> S</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">rc4_prga</span>(<span class="params">S, data</span>):</span><br><span class="line">    i = j = <span class="number">0</span></span><br><span class="line">    result = []</span><br><span class="line">    <span class="keyword">for</span> byte <span class="keyword">in</span> data:</span><br><span class="line">        i = (i + <span class="number">1</span>) % <span class="number">256</span></span><br><span class="line">        j = (j + S[i]) % <span class="number">256</span></span><br><span class="line">        S[i], S[j] = S[j], S[i]</span><br><span class="line">        result.append(byte ^ S[(S[i] + S[j]) % <span class="number">256</span>])</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">bytes</span>(result)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># Key from the program</span></span><br><span class="line">key = <span class="string">b&quot;12345678abcdefghijklmnopqrspxyz&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Encrypted data from byte_14013B000</span></span><br><span class="line">encrypted_data = <span class="built_in">bytes</span>.fromhex(<span class="string">&quot;9ee7305fa701a653591b0a20f173d10eab09840e8d2b&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># XOR with 0x22 to get the actual ciphertext</span></span><br><span class="line">ciphertext = <span class="built_in">bytes</span>([b ^ <span class="number">0x22</span> <span class="keyword">for</span> b <span class="keyword">in</span> encrypted_data])</span><br><span class="line"></span><br><span class="line"><span class="comment"># Decrypt with RC4</span></span><br><span class="line">S = rc4_ksa(key)</span><br><span class="line">plaintext = rc4_prga(S, ciphertext)</span><br><span class="line"></span><br><span class="line"><span class="comment"># print(&quot;Encrypted data:&quot;, encrypted_data.hex())</span></span><br><span class="line"><span class="comment"># print(&quot;Ciphertext (after XOR 0x22):&quot;, ciphertext.hex())</span></span><br><span class="line"><span class="comment"># print(&quot;Flag (hex):&quot;, plaintext.hex())</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;Flag:&quot;</span>, plaintext.decode(<span class="string">&quot;ascii&quot;</span>, errors=<span class="string">&quot;ignore&quot;</span>))</span><br><span class="line"><span class="comment"># flag&#123;nice_to_meet_you&#125;</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight rust"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">fn</span> <span class="title function_">hex_to_bytes</span>(s: &amp;<span class="type">str</span>) <span class="punctuation">-&gt;</span> <span class="type">Vec</span>&lt;<span class="type">u8</span>&gt; &#123;</span><br><span class="line">    s.<span class="title function_ invoke__">as_bytes</span>()</span><br><span class="line">        .<span class="title function_ invoke__">chunks_exact</span>(<span class="number">2</span>)</span><br><span class="line">        .<span class="title function_ invoke__">map</span>(|pair| &#123;</span><br><span class="line">            <span class="keyword">let</span> <span class="variable">high</span> = <span class="keyword">match</span> pair[<span class="number">0</span>] &#123;</span><br><span class="line">                <span class="string">b&#x27;0&#x27;</span>..=<span class="string">b&#x27;9&#x27;</span> =&gt; pair[<span class="number">0</span>] - <span class="string">b&#x27;0&#x27;</span>,</span><br><span class="line">                <span class="string">b&#x27;a&#x27;</span>..=<span class="string">b&#x27;f&#x27;</span> =&gt; pair[<span class="number">0</span>] - <span class="string">b&#x27;a&#x27;</span> + <span class="number">10</span>,</span><br><span class="line">                <span class="string">b&#x27;A&#x27;</span>..=<span class="string">b&#x27;F&#x27;</span> =&gt; pair[<span class="number">0</span>] - <span class="string">b&#x27;A&#x27;</span> + <span class="number">10</span>,</span><br><span class="line">                _ =&gt; <span class="number">0</span>,</span><br><span class="line">            &#125;;</span><br><span class="line">            <span class="keyword">let</span> <span class="variable">low</span> = <span class="keyword">match</span> pair[<span class="number">1</span>] &#123;</span><br><span class="line">                <span class="string">b&#x27;0&#x27;</span>..=<span class="string">b&#x27;9&#x27;</span> =&gt; pair[<span class="number">1</span>] - <span class="string">b&#x27;0&#x27;</span>,</span><br><span class="line">                <span class="string">b&#x27;a&#x27;</span>..=<span class="string">b&#x27;f&#x27;</span> =&gt; pair[<span class="number">1</span>] - <span class="string">b&#x27;a&#x27;</span> + <span class="number">10</span>,</span><br><span class="line">                <span class="string">b&#x27;A&#x27;</span>..=<span class="string">b&#x27;F&#x27;</span> =&gt; pair[<span class="number">1</span>] - <span class="string">b&#x27;A&#x27;</span> + <span class="number">10</span>,</span><br><span class="line">                _ =&gt; <span class="number">0</span>,</span><br><span class="line">            &#125;;</span><br><span class="line">            (high &lt;&lt; <span class="number">4</span>) | low</span><br><span class="line">        &#125;)</span><br><span class="line">        .<span class="title function_ invoke__">collect</span>()</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">fn</span> <span class="title function_">rc4_ksa</span>(key: &amp;[<span class="type">u8</span>]) <span class="punctuation">-&gt;</span> <span class="type">Vec</span>&lt;<span class="type">u8</span>&gt; &#123;</span><br><span class="line">    <span class="keyword">let</span> <span class="keyword">mut </span><span class="variable">s</span> = (<span class="number">0</span>..=<span class="number">255</span>).collect::&lt;<span class="type">Vec</span>&lt;_&gt;&gt;();</span><br><span class="line">    <span class="keyword">let</span> <span class="keyword">mut </span><span class="variable">j</span>: <span class="type">u8</span> = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> <span class="variable">i</span> <span class="keyword">in</span> <span class="number">0</span>..=<span class="number">255</span> &#123;</span><br><span class="line">        j = j + s[i] + key[i % key.<span class="title function_ invoke__">len</span>()];</span><br><span class="line">        s.<span class="title function_ invoke__">swap</span>(i <span class="keyword">as</span> <span class="type">usize</span>, j <span class="keyword">as</span> <span class="type">usize</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    s</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">fn</span> <span class="title function_">rc4_prga</span>(s: &amp;<span class="keyword">mut</span> [<span class="type">u8</span>], data: &amp;[<span class="type">u8</span>]) <span class="punctuation">-&gt;</span> <span class="type">Vec</span>&lt;<span class="type">u8</span>&gt; &#123;</span><br><span class="line">    <span class="keyword">let</span> <span class="keyword">mut </span><span class="variable">output</span> = <span class="type">Vec</span>::<span class="title function_ invoke__">new</span>();</span><br><span class="line">    <span class="keyword">let</span> <span class="keyword">mut </span><span class="variable">i</span>: <span class="type">u8</span> = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">let</span> <span class="keyword">mut </span><span class="variable">j</span>: <span class="type">u8</span> = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> &amp;byte <span class="keyword">in</span> data &#123;</span><br><span class="line">        i = i + <span class="number">1</span>;</span><br><span class="line">        j = j + s[i <span class="keyword">as</span> <span class="type">usize</span>];</span><br><span class="line">        s.<span class="title function_ invoke__">swap</span>(i <span class="keyword">as</span> <span class="type">usize</span>, j <span class="keyword">as</span> <span class="type">usize</span>);</span><br><span class="line">        output.<span class="title function_ invoke__">push</span>(byte ^ s[(s[i <span class="keyword">as</span> <span class="type">usize</span>] + s[j <span class="keyword">as</span> <span class="type">usize</span>]) <span class="keyword">as</span> <span class="type">usize</span>]);</span><br><span class="line">    &#125;</span><br><span class="line">    output</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">fn</span> <span class="title function_">main</span>() &#123;</span><br><span class="line">    <span class="keyword">let</span> <span class="variable">key</span> = <span class="string">b&quot;12345678abcdefghijklmnopqrspxyz&quot;</span>;</span><br><span class="line">    <span class="keyword">let</span> <span class="variable">encrypted</span> = <span class="title function_ invoke__">hex_to_bytes</span>(<span class="string">&quot;9ee7305fa701a653591b0a20f173d10eab09840e8d2b&quot;</span>);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">let</span> <span class="variable">ciphertext</span>: <span class="type">Vec</span>&lt;<span class="type">u8</span>&gt; = <span class="title function_ invoke__">rc4_prga</span>(&amp;<span class="keyword">mut</span> <span class="title function_ invoke__">rc4_ksa</span>(key), &amp;encrypted)</span><br><span class="line">        .<span class="title function_ invoke__">iter</span>()</span><br><span class="line">        .<span class="title function_ invoke__">map</span>(|&amp;b| b ^ <span class="number">0x22</span>)</span><br><span class="line">        .<span class="title function_ invoke__">collect</span>();</span><br><span class="line">    <span class="built_in">println!</span>(<span class="string">&quot;&#123;&#125;&quot;</span>, <span class="type">String</span>::<span class="title function_ invoke__">from_utf8_lossy</span>(&amp;ciphertext));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+        <div id="lv-container"></div>
+        <div class="giscus"></div>
+    </div>
+</div>
+
+    </div>
+</div>
+
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+        
+        
+
+        
+
+        
+
+        
+
+        
+
+    </ul>
+    
+    <p>
+    
+        Created By <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>  Theme <a target="_blank" rel="noopener" href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
+</footer>
+
+
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+
+<script src="/js/index.js"></script>
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+
+
+</html>

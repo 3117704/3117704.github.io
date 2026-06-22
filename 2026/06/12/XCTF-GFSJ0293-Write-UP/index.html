@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang=zh-CN>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta property="og:description" content="随便写写">
+    <meta property="og:type" content="website">
+    <meta name="description" content="随便写写">
+    <meta name="keyword"  content="">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>
+        
+        XCTF GFSJ0293 Write UP - undefined
+        
+    </title>
+
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/css/aircloud.css">
+
+    
+<link rel="stylesheet" href="/css/gitment.css">
+
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_28hi1hpxx24.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script>
+
+    
+
+
+
+
+
+
+
+
+
+<meta name="generator" content="Hexo 8.1.2"></head>
+
+<body>
+
+<div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> h0w1e&#39;s blogs </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        
+<div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar radius">
+            <img src="/" />
+        </div>
+        <div class="name">
+            <i>h0w1e</i>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li >
+                <a href="/">
+                    <i class="iconfont icon-shouye1"></i>
+                    <span>主页</span>
+                </a>
+            </li>
+            <li >
+                <a href="/tags">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>标签</span>
+                </a>
+            </li>
+            <li >
+                <a href="/archives">
+                    <i class="iconfont icon-guidang2"></i>
+                    <span>存档</span>
+                </a>
+            </li>
+            <li >
+                <a href="/collect/">
+                    <i class="iconfont icon-shoucang1"></i>
+                    <span>收藏</span>
+                </a>
+            </li>
+            <li >
+                <a href="/about/">
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>关于</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <i class="iconfont icon-sousuo1"></i>
+                    <span>搜索</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    
+        <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#XCTF-GFSJ0293-Write-UP"><span class="toc-text">XCTF GFSJ0293 Write UP</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%96%87%E4%BB%B6%E4%BF%A1%E6%81%AF"><span class="toc-text">文件信息</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%9C%89%E6%B7%B7%E6%B7%86"><span class="toc-text">有混淆</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81%E5%88%86%E6%9E%90"><span class="toc-text">代码分析</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E8%A7%A3%E5%AF%86%E8%84%9A%E6%9C%AC"><span class="toc-text">解密脚本</span></a></li></ol></li></ol>
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-bg" id="search-bg"></div>
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input"/>
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+
+        <div class="index-about-mobile">
+            <i> h0w1e&#39;s blogs </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        
+
+
+<div class="post-container">
+    <div class="post-title">
+        XCTF GFSJ0293 Write UP
+    </div>
+
+    <div class="post-meta">
+        <span class="attr">发布于：<span>2026-06-12 05:21:11</span></span>
+        
+        <span class="attr">标签：/
+        
+        <a class="tag" href="/tags/#XCTF" title="XCTF">XCTF</a>
+        <span>/</span>
+        
+        
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+</span>
+</span>
+    </div>
+    <div class="post-content no-indent">
+        <h3 id="XCTF-GFSJ0293-Write-UP"><a href="#XCTF-GFSJ0293-Write-UP" class="headerlink" title="XCTF GFSJ0293 Write UP"></a>XCTF GFSJ0293 Write UP</h3><h5 id="文件信息"><a href="#文件信息" class="headerlink" title="文件信息"></a>文件信息</h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">PE32</span><br><span class="line">    Operation system: Windows (95) [I386, 32-bit, Console]</span><br><span class="line">    Linker: Microsoft Linker (11.0)</span><br><span class="line">    Language: MSIL/C#</span><br><span class="line">    Library: .NET Framework (CLR 4.0.30319)</span><br><span class="line">    Protector: Dotfuscator</span><br><span class="line">    (Heur) Protection: Obfuscation [Modified managed EP + Watermark]</span><br></pre></td></tr></table></figure>
+
+<h5 id="有混淆"><a href="#有混淆" class="headerlink" title="有混淆"></a>有混淆</h5><p>可以用<a target="_blank" rel="noopener" href="https://github.com/Tianjiao/de4dot">de4dot</a>来脱掉</p>
+<p><code>de4dot.exe -d [source file]</code></p>
+<h5 id="代码分析"><a href="#代码分析" class="headerlink" title="代码分析"></a>代码分析</h5><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// ConsoleApplication1, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</span></span><br><span class="line"><span class="comment">// Class0</span></span><br><span class="line"><span class="keyword">using</span> System;</span><br><span class="line"><span class="keyword">using</span> System.Security.Cryptography;</span><br><span class="line"><span class="keyword">using</span> System.Text;</span><br><span class="line"></span><br><span class="line"><span class="keyword">internal</span> <span class="keyword">class</span> <span class="title">Class0</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="built_in">int</span> <span class="title">smethod_0</span>(<span class="params"><span class="built_in">int</span> int_0, <span class="built_in">int</span> int_1</span>)</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">return</span> (<span class="keyword">new</span> <span class="built_in">int</span>[<span class="number">30</span>]</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="number">2</span>, <span class="number">3</span>, <span class="number">5</span>, <span class="number">7</span>, <span class="number">11</span>, <span class="number">13</span>, <span class="number">17</span>, <span class="number">19</span>, <span class="number">23</span>, <span class="number">29</span>,</span><br><span class="line">            <span class="number">31</span>, <span class="number">37</span>, <span class="number">41</span>, <span class="number">43</span>, <span class="number">47</span>, <span class="number">53</span>, <span class="number">59</span>, <span class="number">61</span>, <span class="number">67</span>, <span class="number">71</span>,</span><br><span class="line">            <span class="number">73</span>, <span class="number">79</span>, <span class="number">83</span>, <span class="number">89</span>, <span class="number">97</span>, <span class="number">101</span>, <span class="number">103</span>, <span class="number">107</span>, <span class="number">109</span>, <span class="number">113</span></span><br><span class="line">        &#125;)[int_1] ^ int_0;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="built_in">string</span> <span class="title">smethod_1</span>(<span class="params"><span class="built_in">string</span> string_0</span>)</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">byte</span>[] bytes = Encoding.ASCII.GetBytes(string_0);</span><br><span class="line">        <span class="keyword">return</span> <span class="string">&quot;flag&#123;&quot;</span> + BitConverter.ToString(<span class="keyword">new</span> MD5CryptoServiceProvider().ComputeHash(bytes)).Replace(<span class="string">&quot;-&quot;</span>, <span class="string">&quot;&quot;</span>) + <span class="string">&quot;&#125;&quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">smethod_2</span>(<span class="params"><span class="built_in">string</span> string_0, <span class="built_in">int</span> int_0, <span class="keyword">ref</span> <span class="built_in">string</span> string_1</span>)</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">int</span> num = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">if</span> (<span class="number">0</span> &lt; string_0.Length)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">do</span></span><br><span class="line">            &#123;</span><br><span class="line">                <span class="built_in">char</span> c = string_0[num];</span><br><span class="line">                <span class="built_in">int</span> num2 = <span class="number">1</span>;</span><br><span class="line">                <span class="keyword">do</span></span><br><span class="line">                &#123;</span><br><span class="line">                    c = Convert.ToChar(smethod_0(Convert.ToInt32(c), num2));</span><br><span class="line">                    num2++;</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">while</span> (num2 &lt; <span class="number">15</span>);</span><br><span class="line">                string_1 += c;</span><br><span class="line">                num++;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">while</span> (num &lt; string_0.Length);</span><br><span class="line">        &#125;</span><br><span class="line">        string_1 = smethod_1(string_1);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">Main</span>(<span class="params"><span class="built_in">string</span>[] <span class="keyword">args</span></span>)</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">string</span> string_ = <span class="literal">null</span>;</span><br><span class="line">        <span class="built_in">string</span> <span class="keyword">value</span> = <span class="string">$&quot;<span class="subst">&#123;DateTime.Now.Hour + <span class="number">1</span>&#125;</span>&quot;</span>;</span><br><span class="line">        <span class="built_in">string</span> string_2 = <span class="string">&quot;CreateByTenshine&quot;</span>;</span><br><span class="line">        smethod_2(string_2, Convert.ToInt32(<span class="keyword">value</span>), <span class="keyword">ref</span> string_);</span><br><span class="line">        <span class="built_in">string</span> text = Console.ReadLine();</span><br><span class="line">        <span class="keyword">if</span> (text == string_)</span><br><span class="line">        &#123;</span><br><span class="line">            Console.WriteLine(<span class="string">&quot;u got it!&quot;</span>);</span><br><span class="line">            Console.ReadKey(intercept: <span class="literal">true</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">        &#123;</span><br><span class="line">            Console.Write(<span class="string">&quot;wrong&quot;</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        Console.ReadKey(intercept: <span class="literal">true</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>程序使用当前小时+1作为密钥对”CreateByTenshine”进行转换，然后计算MD5。</p>
+<p>让我暴力尝试所有可能的hour值(0-23)来找到flag，因为代码中 int_0 参数实际上没有被使用,所以无论hour是多少，flag都是一样的。</p>
+<h5 id="解密脚本"><a href="#解密脚本" class="headerlink" title="解密脚本"></a>解密脚本</h5><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> hashlib</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">smethod_0</span>(<span class="params">int_0, int_1</span>):</span><br><span class="line">    primes = [ <span class="number">2</span>, <span class="number">3</span>, <span class="number">5</span>, <span class="number">7</span>, <span class="number">11</span>, <span class="number">13</span>, <span class="number">17</span>, <span class="number">19</span>, <span class="number">23</span>, <span class="number">29</span>, <span class="number">31</span>, <span class="number">37</span>, <span class="number">41</span>, <span class="number">43</span>, <span class="number">47</span>, <span class="number">53</span>, <span class="number">59</span>, <span class="number">61</span>, <span class="number">67</span>, <span class="number">71</span>, <span class="number">73</span>, <span class="number">79</span>, <span class="number">83</span>, <span class="number">89</span>, <span class="number">97</span>, <span class="number">101</span>, <span class="number">103</span>, <span class="number">107</span>, <span class="number">109</span>, <span class="number">113</span>]</span><br><span class="line">    <span class="keyword">return</span> primes[int_1] ^ int_0</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">smethod_1</span>(<span class="params">string_0</span>):</span><br><span class="line">    hash_bytes = hashlib.md5(string_0.encode(<span class="string">&quot;ascii&quot;</span>)).digest()</span><br><span class="line">    <span class="keyword">return</span> <span class="string">&quot;flag&#123;&quot;</span> + hash_bytes.<span class="built_in">hex</span>().upper() + <span class="string">&quot;&#125;&quot;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">smethod_2</span>(<span class="params">string_0, string_1</span>):</span><br><span class="line">    <span class="keyword">for</span> c <span class="keyword">in</span> string_0:</span><br><span class="line">        char_val = <span class="built_in">ord</span>(c)</span><br><span class="line">        <span class="keyword">for</span> num2 <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>, <span class="number">15</span>):</span><br><span class="line">            char_val = smethod_0(char_val, num2)</span><br><span class="line">        string_1 += <span class="built_in">chr</span>(char_val)</span><br><span class="line">        <span class="keyword">return</span> string_1</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">string_ = <span class="string">&quot;&quot;</span></span><br><span class="line">string_2 = <span class="string">&quot;CreateByTenshine&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> hour <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">24</span>):</span><br><span class="line">    counter = hour + <span class="number">1</span></span><br><span class="line">    transformed = smethod_2(string_2, string_)</span><br><span class="line">    flag = smethod_1(transformed)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">f&quot;counter=<span class="subst">&#123;counter&#125;</span>, hour=<span class="subst">&#123;hour&#125;</span>: <span class="subst">&#123;flag&#125;</span>&quot;</span>)</span><br><span class="line">    <span class="comment">#flag&#123;815417267F76F6F460A4A61F9DB75FDB&#125;</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>Rust</p>
+<figure class="highlight toml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="section">[package]</span></span><br><span class="line"><span class="attr">name</span> = <span class="string">&quot;wp&quot;</span></span><br><span class="line"><span class="attr">version</span> = <span class="string">&quot;0.1.0&quot;</span></span><br><span class="line"><span class="attr">edition</span> = <span class="string">&quot;2024&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="section">[dependencies]</span></span><br><span class="line"><span class="attr">md-5</span> = <span class="string">&quot;0.11.0&quot;</span></span><br><span class="line"><span class="attr">hex</span> = <span class="string">&quot;0.4.3&quot;</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight rust"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">use</span> md5::&#123;Digest, Md5&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">fn</span> <span class="title function_">smethod_0</span>(int_0: <span class="type">u8</span>, int_1: <span class="type">usize</span>) <span class="punctuation">-&gt;</span> <span class="type">u8</span> &#123;</span><br><span class="line">    [</span><br><span class="line">        <span class="number">2</span>, <span class="number">3</span>, <span class="number">5</span>, <span class="number">7</span>, <span class="number">11</span>, <span class="number">13</span>, <span class="number">17</span>, <span class="number">19</span>, <span class="number">23</span>, <span class="number">29</span>, <span class="number">31</span>, <span class="number">37</span>, <span class="number">41</span>, <span class="number">43</span>, <span class="number">47</span>, <span class="number">53</span>, <span class="number">59</span>, <span class="number">61</span>, <span class="number">67</span>, <span class="number">71</span>, <span class="number">73</span>, <span class="number">79</span>, <span class="number">83</span>, <span class="number">89</span>,</span><br><span class="line">        <span class="number">97</span>, <span class="number">101</span>, <span class="number">103</span>, <span class="number">107</span>, <span class="number">109</span>, <span class="number">113</span>,</span><br><span class="line">    ][int_1]</span><br><span class="line">        ^ int_0</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">fn</span> <span class="title function_">method_1</span>(string: &amp;<span class="type">str</span>) <span class="punctuation">-&gt;</span> <span class="type">String</span> &#123;</span><br><span class="line">    <span class="keyword">let</span> <span class="variable">hash_bytes</span> = Md5::<span class="title function_ invoke__">digest</span>(string.<span class="title function_ invoke__">as_bytes</span>());</span><br><span class="line">    <span class="built_in">format!</span>(<span class="string">&quot;flag&#123;&#123;&#123;&#125;&#125;&#125;&quot;</span>, hex::<span class="title function_ invoke__">encode</span>(hash_bytes).<span class="title function_ invoke__">to_uppercase</span>())</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">fn</span> <span class="title function_">smethod_2</span>(string_0: &amp;<span class="type">str</span>, string_1: &amp;<span class="keyword">mut</span> <span class="type">String</span>) &#123;</span><br><span class="line">    <span class="keyword">for</span> <span class="variable">c</span> <span class="keyword">in</span> string_0.<span class="title function_ invoke__">chars</span>() &#123;</span><br><span class="line">        <span class="keyword">let</span> <span class="keyword">mut </span><span class="variable">char_val</span> = c <span class="keyword">as</span> <span class="type">u8</span>;</span><br><span class="line">        <span class="keyword">for</span> <span class="variable">num2</span> <span class="keyword">in</span> <span class="number">1</span>..<span class="number">15</span> &#123;</span><br><span class="line">            char_val = <span class="title function_ invoke__">smethod_0</span>(char_val, num2);</span><br><span class="line">        &#125;</span><br><span class="line">        string_1.<span class="title function_ invoke__">push</span>(char_val <span class="keyword">as</span> <span class="type">char</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">fn</span> <span class="title function_">main</span>() &#123;</span><br><span class="line">    <span class="keyword">let</span> <span class="keyword">mut </span><span class="variable">string_</span> = <span class="type">String</span>::<span class="title function_ invoke__">new</span>();</span><br><span class="line">    <span class="keyword">let</span> <span class="variable">string_2</span> = <span class="string">&quot;CreateByTenshine&quot;</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> <span class="variable">hour</span> <span class="keyword">in</span> <span class="number">0</span>..<span class="number">24</span> &#123;</span><br><span class="line">        <span class="keyword">let</span> <span class="variable">counter</span> = hour + <span class="number">1</span>;</span><br><span class="line">        <span class="title function_ invoke__">smethod_2</span>(string_2, &amp;<span class="keyword">mut</span> string_);</span><br><span class="line">        <span class="keyword">let</span> <span class="variable">flag</span> = <span class="title function_ invoke__">method_1</span>(&amp;string_);</span><br><span class="line">        <span class="built_in">println!</span>(<span class="string">&quot;counter=&#123;&#125;, hour=&#123;&#125;: &#123;&#125;&quot;</span>, counter, hour, flag);</span><br><span class="line">        string_.<span class="title function_ invoke__">clear</span>();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// flag&#123;815417267F76F6F460A4A61F9DB75FDB&#125;</span></span><br></pre></td></tr></table></figure>
+
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+        <div id="lv-container"></div>
+        <div class="giscus"></div>
+    </div>
+</div>
+
+    </div>
+</div>
+
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+        
+        
+
+        
+
+        
+
+        
+
+        
+
+    </ul>
+    
+    <p>
+    
+        Created By <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>  Theme <a target="_blank" rel="noopener" href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
+</footer>
+
+
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+
+<script src="/js/index.js"></script>
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+
+
+</html>

@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang=zh-CN>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta property="og:description" content="随便写写">
+    <meta property="og:type" content="website">
+    <meta name="description" content="随便写写">
+    <meta name="keyword"  content="">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>
+        
+        XCTF GFSJ 0780 Write UP - undefined
+        
+    </title>
+
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/css/aircloud.css">
+
+    
+<link rel="stylesheet" href="/css/gitment.css">
+
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_28hi1hpxx24.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script>
+
+    
+
+
+
+
+
+
+
+
+
+<meta name="generator" content="Hexo 8.1.2"></head>
+
+<body>
+
+<div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> h0w1e&#39;s blogs </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        
+<div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar radius">
+            <img src="/" />
+        </div>
+        <div class="name">
+            <i>h0w1e</i>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li >
+                <a href="/">
+                    <i class="iconfont icon-shouye1"></i>
+                    <span>主页</span>
+                </a>
+            </li>
+            <li >
+                <a href="/tags">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>标签</span>
+                </a>
+            </li>
+            <li >
+                <a href="/archives">
+                    <i class="iconfont icon-guidang2"></i>
+                    <span>存档</span>
+                </a>
+            </li>
+            <li >
+                <a href="/collect/">
+                    <i class="iconfont icon-shoucang1"></i>
+                    <span>收藏</span>
+                </a>
+            </li>
+            <li >
+                <a href="/about/">
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>关于</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <i class="iconfont icon-sousuo1"></i>
+                    <span>搜索</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    
+        <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#XCTF-GFSJ-0780-Write-UP"><span class="toc-text">XCTF GFSJ 0780 Write UP</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%96%87%E4%BB%B6%E4%BF%A1%E6%81%AF"><span class="toc-text">文件信息</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81%E5%88%86%E6%9E%90"><span class="toc-text">代码分析</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E8%A7%A3%E5%AF%86%E8%84%9A%E6%9C%AC"><span class="toc-text">解密脚本</span></a></li></ol></li></ol>
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-bg" id="search-bg"></div>
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input"/>
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+
+        <div class="index-about-mobile">
+            <i> h0w1e&#39;s blogs </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        
+
+
+<div class="post-container">
+    <div class="post-title">
+        XCTF GFSJ 0780 Write UP
+    </div>
+
+    <div class="post-meta">
+        <span class="attr">发布于：<span>2026-06-26 11:22:34</span></span>
+        
+        <span class="attr">标签：/
+        
+        <a class="tag" href="/tags/#XCTF" title="XCTF">XCTF</a>
+        <span>/</span>
+        
+        
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+</span>
+</span>
+    </div>
+    <div class="post-content no-indent">
+        <h3 id="XCTF-GFSJ-0780-Write-UP"><a href="#XCTF-GFSJ-0780-Write-UP" class="headerlink" title="XCTF GFSJ 0780 Write UP"></a>XCTF GFSJ 0780 Write UP</h3><h5 id="文件信息"><a href="#文件信息" class="headerlink" title="文件信息"></a>文件信息</h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">ELF32</span><br><span class="line">    Operation system: Ubuntu Linux (ABI: 2.6.24) [386, 32-bit, EXEC]</span><br><span class="line">    Compiler: GCC ((Ubuntu/Linaro 4.6.3-1ubuntu5) 4.6.3)</span><br><span class="line">    Language: C</span><br><span class="line">    Library: GLIBC (2.4) [EXEC 386-32]</span><br></pre></td></tr></table></figure>
+
+<h5 id="代码分析"><a href="#代码分析" class="headerlink" title="代码分析"></a>代码分析</h5><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br></pre></td><td class="code"><pre><span class="line">_BOOL4 __cdecl <span class="title function_">sub_8048580</span><span class="params">(_BYTE *ptr, <span class="type">int</span> n13)</span></span><br><span class="line">&#123;</span><br><span class="line">  <span class="type">char</span> v3; <span class="comment">// bp</span></span><br><span class="line">  _BOOL4 result; <span class="comment">// eax</span></span><br><span class="line">  _BYTE buf[<span class="number">128</span>]; <span class="comment">// [esp+Ch] [ebp-A0h] BYREF</span></span><br><span class="line">  <span class="type">unsigned</span> <span class="type">int</span> v6; <span class="comment">// [esp+8Ch] [ebp-20h]</span></span><br><span class="line"></span><br><span class="line">  v6 = __readgsdword(<span class="number">0x14u</span>);</span><br><span class="line">  <span class="keyword">while</span> ( <span class="number">1</span> )</span><br><span class="line">  &#123;</span><br><span class="line">    <span class="built_in">memset</span>(buf, <span class="number">0</span>, <span class="keyword">sizeof</span>(buf));</span><br><span class="line">    v3 = ptr[n13];</span><br><span class="line">    buf[(v3 + <span class="number">64</span>) % <span class="number">128</span>] = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">switch</span> ( v3 )</span><br><span class="line">    &#123;</span><br><span class="line">      <span class="keyword">case</span> <span class="number">10</span>:</span><br><span class="line">        <span class="keyword">return</span> n13 == <span class="number">13</span> &amp;&amp; buf[<span class="number">74</span>] != <span class="number">0</span>;</span><br><span class="line">      <span class="keyword">case</span> <span class="number">48</span>:</span><br><span class="line">        <span class="keyword">if</span> ( n13 || !buf[<span class="number">112</span>] )</span><br><span class="line">          <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        n13 = <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">continue</span>;</span><br><span class="line">      <span class="keyword">case</span> <span class="number">49</span>:</span><br><span class="line">        <span class="keyword">if</span> ( n13 == <span class="number">14</span> &amp;&amp; buf[<span class="number">113</span>] )</span><br><span class="line">          <span class="keyword">goto</span> LABEL_11;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">      <span class="keyword">case</span> <span class="number">50</span>:</span><br><span class="line">        <span class="keyword">if</span> ( n13 == <span class="number">20</span> &amp;&amp; buf[<span class="number">114</span>] )</span><br><span class="line">          <span class="keyword">goto</span> LABEL_14;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">      <span class="keyword">case</span> <span class="number">51</span>:</span><br><span class="line">        <span class="keyword">if</span> ( n13 != <span class="number">89</span> || !buf[<span class="number">115</span>] )</span><br><span class="line">          <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        n13 = <span class="number">90</span>;</span><br><span class="line">        <span class="keyword">continue</span>;</span><br><span class="line">      <span class="keyword">case</span> <span class="number">52</span>:</span><br><span class="line">        <span class="keyword">if</span> ( n13 != <span class="number">15</span> || !buf[<span class="number">116</span>] )</span><br><span class="line">          <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        n13 = <span class="number">16</span>;</span><br><span class="line">        <span class="keyword">continue</span>;</span><br><span class="line">      <span class="keyword">case</span> <span class="number">53</span>:</span><br><span class="line">        <span class="keyword">if</span> ( n13 != <span class="number">14</span> || !buf[<span class="number">117</span>] )</span><br><span class="line">          <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">LABEL_11:</span><br><span class="line">        n13 = <span class="number">15</span>;</span><br><span class="line">        <span class="keyword">continue</span>;</span><br><span class="line">      <span class="keyword">case</span> <span class="number">54</span>:</span><br><span class="line">        <span class="keyword">if</span> ( n13 != <span class="number">12</span> || !buf[<span class="number">118</span>] )</span><br><span class="line">          <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        n13 = <span class="number">13</span>;</span><br><span class="line">        <span class="keyword">continue</span>;</span><br><span class="line">      <span class="keyword">case</span> <span class="number">55</span>:</span><br><span class="line">        <span class="keyword">if</span> ( n13 != <span class="number">5</span> || !buf[<span class="number">119</span>] )</span><br><span class="line">          <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        n13 = <span class="number">6</span>;</span><br><span class="line">        <span class="keyword">continue</span>;</span><br><span class="line">      <span class="keyword">case</span> <span class="number">56</span>:</span><br><span class="line">        result = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">if</span> ( buf[<span class="number">121</span>] )</span><br><span class="line">          <span class="keyword">return</span> n13 == <span class="number">33</span> || n13 == <span class="number">2</span>;</span><br><span class="line">        <span class="keyword">return</span> result;</span><br><span class="line">      <span class="keyword">case</span> <span class="number">57</span>:</span><br><span class="line">        <span class="keyword">if</span> ( n13 != <span class="number">1</span> || !buf[<span class="number">121</span>] )</span><br><span class="line">          <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        n13 = <span class="number">2</span>;</span><br><span class="line">        <span class="keyword">continue</span>;</span><br><span class="line">      <span class="keyword">case</span> <span class="number">97</span>:</span><br><span class="line">        <span class="keyword">if</span> ( n13 != <span class="number">35</span> || !buf[<span class="number">33</span>] )</span><br><span class="line">          <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        n13 = <span class="number">36</span>;</span><br><span class="line">        <span class="keyword">continue</span>;</span><br><span class="line">      <span class="keyword">case</span> <span class="number">98</span>:</span><br><span class="line">        <span class="keyword">if</span> ( n13 != <span class="number">11</span> || !buf[<span class="number">34</span>] )</span><br><span class="line">          <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        n13 = <span class="number">12</span>;</span><br><span class="line">        <span class="keyword">continue</span>;</span><br><span class="line">      <span class="keyword">case</span> <span class="number">99</span>:</span><br><span class="line">        <span class="keyword">if</span> ( n13 != <span class="number">32</span> || !buf[<span class="number">33</span>] )</span><br><span class="line">          <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        n13 = <span class="number">33</span>;</span><br><span class="line">        <span class="keyword">continue</span>;</span><br><span class="line">      <span class="keyword">case</span> <span class="number">100</span>:</span><br><span class="line">        <span class="keyword">if</span> ( n13 != <span class="number">3</span> || !buf[<span class="number">36</span>] )</span><br><span class="line">          <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        n13 = <span class="number">4</span>;</span><br><span class="line">        <span class="keyword">continue</span>;</span><br><span class="line">      <span class="keyword">case</span> <span class="number">101</span>:</span><br><span class="line">        <span class="keyword">if</span> ( n13 != <span class="number">7</span> || !buf[<span class="number">37</span>] )</span><br><span class="line">          <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        n13 = <span class="number">8</span>;</span><br><span class="line">        <span class="keyword">continue</span>;</span><br><span class="line">      <span class="keyword">case</span> <span class="number">102</span>:</span><br><span class="line">        <span class="keyword">if</span> ( !buf[<span class="number">38</span>] || n13 != <span class="number">8</span> &amp;&amp; n13 != <span class="number">4</span> )</span><br><span class="line">          <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">goto</span> LABEL_52;</span><br><span class="line">      <span class="keyword">case</span> <span class="number">103</span>:</span><br><span class="line">        <span class="keyword">return</span> n13 == <span class="number">12</span> &amp;&amp; buf[<span class="number">52</span>] != <span class="number">0</span>;</span><br><span class="line">      <span class="keyword">case</span> <span class="number">104</span>:</span><br><span class="line">        <span class="keyword">if</span> ( n13 != <span class="number">13</span> || !buf[<span class="number">39</span>] )</span><br><span class="line">          <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        n13 = <span class="number">14</span>;</span><br><span class="line">        <span class="keyword">continue</span>;</span><br><span class="line">      <span class="keyword">case</span> <span class="number">105</span>:</span><br><span class="line">        <span class="keyword">if</span> ( n13 != <span class="number">9</span> || !buf[<span class="number">41</span>] )</span><br><span class="line">          <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        n13 = <span class="number">10</span>;</span><br><span class="line">        <span class="keyword">continue</span>;</span><br><span class="line">      <span class="keyword">case</span> <span class="number">106</span>:</span><br><span class="line">        <span class="keyword">if</span> ( n13 != <span class="number">10</span> || !buf[<span class="number">42</span>] )</span><br><span class="line">          <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        n13 = <span class="number">11</span>;</span><br><span class="line">        <span class="keyword">continue</span>;</span><br><span class="line">      <span class="keyword">case</span> <span class="number">107</span>:</span><br><span class="line">        <span class="keyword">return</span> n13 == <span class="number">12</span> &amp;&amp; buf[<span class="number">43</span>] != <span class="number">0</span>;</span><br><span class="line">      <span class="keyword">case</span> <span class="number">108</span>:</span><br><span class="line">        <span class="keyword">if</span> ( n13 != <span class="number">19</span> || !buf[<span class="number">44</span>] )</span><br><span class="line">          <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        n13 = <span class="number">20</span>;</span><br><span class="line">        <span class="keyword">continue</span>;</span><br><span class="line">      <span class="keyword">case</span> <span class="number">109</span>:</span><br><span class="line">        <span class="keyword">if</span> ( n13 != <span class="number">17</span> || !buf[<span class="number">45</span>] )</span><br><span class="line">          <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        n13 = <span class="number">18</span>;</span><br><span class="line">        <span class="keyword">continue</span>;</span><br><span class="line">      <span class="keyword">case</span> <span class="number">110</span>:</span><br><span class="line">        <span class="keyword">return</span> n13 == <span class="number">18</span> &amp;&amp; buf[<span class="number">45</span>] != <span class="number">0</span>;</span><br><span class="line">      <span class="keyword">case</span> <span class="number">111</span>:</span><br><span class="line">        <span class="keyword">if</span> ( !buf[<span class="number">46</span>] || n13 != <span class="number">6</span> &amp;&amp; n13 != <span class="number">28</span> )</span><br><span class="line">          <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">LABEL_52:</span><br><span class="line">        ++n13;</span><br><span class="line">        <span class="keyword">continue</span>;</span><br><span class="line">      <span class="keyword">case</span> <span class="number">112</span>:</span><br><span class="line">        <span class="keyword">if</span> ( n13 != <span class="number">30</span> || !buf[<span class="number">48</span>] )</span><br><span class="line">          <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        n13 = <span class="number">31</span>;</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">      <span class="keyword">case</span> <span class="number">113</span>:</span><br><span class="line">        <span class="keyword">if</span> ( n13 != <span class="number">29</span> || !buf[<span class="number">49</span>] )</span><br><span class="line">          <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        n13 = <span class="number">30</span>;</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">      <span class="keyword">case</span> <span class="number">114</span>:</span><br><span class="line">        <span class="keyword">if</span> ( n13 != <span class="number">20</span> || !buf[<span class="number">50</span>] )</span><br><span class="line">          <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">LABEL_14:</span><br><span class="line">        n13 = <span class="number">21</span>;</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">      <span class="keyword">case</span> <span class="number">115</span>:</span><br><span class="line">        <span class="keyword">if</span> ( n13 != <span class="number">25</span> || !buf[<span class="number">51</span>] )</span><br><span class="line">          <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        n13 = <span class="number">26</span>;</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">      <span class="keyword">case</span> <span class="number">116</span>:</span><br><span class="line">        <span class="keyword">return</span> n13 == <span class="number">24</span> &amp;&amp; buf[<span class="number">50</span>] != <span class="number">0</span>;</span><br><span class="line">      <span class="keyword">case</span> <span class="number">117</span>:</span><br><span class="line">        <span class="keyword">if</span> ( n13 != <span class="number">26</span> || !buf[<span class="number">53</span>] )</span><br><span class="line">          <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        n13 = <span class="number">27</span>;</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">      <span class="keyword">case</span> <span class="number">118</span>:</span><br><span class="line">        <span class="keyword">if</span> ( n13 != <span class="number">2</span> || !buf[<span class="number">54</span>] )</span><br><span class="line">          <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        n13 = <span class="number">3</span>;</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">      <span class="keyword">case</span> <span class="number">119</span>:</span><br><span class="line">        <span class="keyword">if</span> ( n13 != <span class="number">6</span> || !buf[<span class="number">55</span>] )</span><br><span class="line">          <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        n13 = <span class="number">7</span>;</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">      <span class="keyword">case</span> <span class="number">120</span>:</span><br><span class="line">        <span class="keyword">if</span> ( n13 != <span class="number">22</span> || !buf[<span class="number">56</span>] )</span><br><span class="line">          <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        n13 = <span class="number">23</span>;</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">      <span class="keyword">case</span> <span class="number">121</span>:</span><br><span class="line">        <span class="keyword">if</span> ( n13 != <span class="number">23</span> || !buf[<span class="number">57</span>] )</span><br><span class="line">          <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        n13 = <span class="number">24</span>;</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">      <span class="keyword">case</span> <span class="number">122</span>:</span><br><span class="line">        <span class="keyword">return</span> n13 == <span class="number">21</span> &amp;&amp; buf[<span class="number">33</span>] != <span class="number">0</span>;</span><br><span class="line">      <span class="keyword">default</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>一个小型的状态机，通过遍历输入的字节序列，根据当前状态（n13）和当前字符决定是否继续或接受。n13 既当索引又当状态，每次循环根据当前字符更新。每次循环重置，仅用于检查当前字符是否映射到特定值。等价于判断当前字符是否为某个固定的 ASCII 码。转移表计算方式<code>(v3 + 64) % 128</code>。</p>
+<h5 id="解密脚本"><a href="#解密脚本" class="headerlink" title="解密脚本"></a>解密脚本</h5><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
+
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+        <div id="lv-container"></div>
+        <div class="giscus"></div>
+    </div>
+</div>
+
+    </div>
+</div>
+
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+        
+        
+
+        
+
+        
+
+        
+
+        
+
+    </ul>
+    
+    <p>
+    
+        Created By <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>  Theme <a target="_blank" rel="noopener" href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
+</footer>
+
+
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+
+<script src="/js/index.js"></script>
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+
+
+</html>
